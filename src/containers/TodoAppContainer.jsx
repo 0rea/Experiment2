@@ -1,11 +1,9 @@
-// src/containers/TodoAppContainer.jsx
 import React, { useState } from 'react';
 import { TodoContext } from '../contexts/TodoContext';
 import TodoList from '../TodoList';
 import TodoForm from '../TodoForm';
 
 function TodoAppContainer() {
-  // 🔽 Logic ทั้งหมดอยู่ที่นี่
   const [todos, setTodos] = useState([
     { id: 1, text: 'เรียนรู้ Design Patterns', completed: false },
   ]);
@@ -42,11 +40,10 @@ function TodoAppContainer() {
     editTodo,
   };
 
-  // 🔽 Container จะ return ส่วนของ UI ที่เกี่ยวข้อง
   return (
     <TodoContext.Provider value={todoContextValue}>
       <div className="app">
-        <h1>My To-Do List (Container Pattern)</h1>
+        <h1>My To-Do List (Nattapong)</h1>
         <TodoForm />
         <TodoList />
       </div>

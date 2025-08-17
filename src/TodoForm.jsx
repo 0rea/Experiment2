@@ -1,9 +1,8 @@
-// src/TodoForm.jsx
-import React, { useState, useContext } from 'react'; // 🔽 import useContext
-import { TodoContext } from './contexts/TodoContext'; // 🔽 Import Context
+import React, { useState, useContext } from 'react'; 
+import { TodoContext } from './contexts/TodoContext'; 
 
-function TodoForm() { // 🔽 ไม่ต้องรับ props แล้ว
-  const { addTodo } = useContext(TodoContext); // 🔽 ดึงฟังก์ชันมาจาก context
+function TodoForm() { 
+  const { addTodo } = useContext(TodoContext); 
   const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = (e) => {
@@ -19,9 +18,9 @@ function TodoForm() { // 🔽 ไม่ต้องรับ props แล้ว
         type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        placeholder="เพิ่มรายการ"
+        placeholder="List"
       />
-      <button type="submit">เพิ่ม</button>
+      <button type="submit">Add</button>
     </form>
   );
 }

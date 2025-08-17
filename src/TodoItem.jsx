@@ -1,9 +1,8 @@
-// src/TodoItem.jsx
 import React, { useState, useContext } from 'react';
 import { TodoContext } from './contexts/TodoContext';
 
-function TodoItem({ todo }) { // 🔽 รับแค่ todo ก็พอ
-  const { deleteTodo, toggleTodo, editTodo } = useContext(TodoContext); // 🔽 ดึงฟังก์ชันมาจาก context
+function TodoItem({ todo }) { 
+  const { deleteTodo, toggleTodo, editTodo } = useContext(TodoContext); 
   const [isEditing, setIsEditing] = useState(false);
   const [newText, setNewText] = useState(todo.text);
 
@@ -14,7 +13,6 @@ function TodoItem({ todo }) { // 🔽 รับแค่ todo ก็พอ
     }
   };
 
-  // ... (ส่วน JSX เหมือนเดิมทุกประการ)
   return (
      <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>
       {isEditing ? (
@@ -33,11 +31,11 @@ function TodoItem({ todo }) { // 🔽 รับแค่ todo ก็พอ
       )}
       <div>
         {isEditing ? (
-          <button onClick={handleSave} className="save-btn">บันทึก</button>
+          <button onClick={handleSave} className="save-btn">Save</button>
         ) : (
-          <button onClick={() => setIsEditing(true)} className="edit-btn">แก้ไข</button>
+          <button onClick={() => setIsEditing(true)} className="edit-btn">Setting</button>
         )}
-        <button onClick={() => deleteTodo(todo.id)}>ลบ</button>
+        <button onClick={() => deleteTodo(todo.id)}>Delete</button>
       </div>
     </li>
   );

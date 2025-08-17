@@ -1,8 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  base: '/react-workshop/', // ต้องมี slash นำหน้าและปิดท้าย
+  base: '/react-workshop/', 
   plugins: [react()],
 })
