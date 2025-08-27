@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
-import TodoItem from './TodoItem';
-import { TodoContext } from './contexts/TodoContext';
+// src/TodoList.jsx
+import React from 'react';
 
-function TodoList() { 
-  const { todos } = useContext(TodoContext); 
-
+function TodoList({ todos, deleteTodo }) { // รับ todos และ deleteTodo มาจาก props
   return (
     <ul className="todo-list">
       {todos.map(todo => (
-        <TodoItem key={todo.id} todo={todo} />
+        <li key={todo.id} className="todo-item">
+          <span>{todo.text}</span>
+          <button onClick={() => deleteTodo(todo.id)}>ลบ</button>
+        </li>
       ))}
     </ul>
   );
